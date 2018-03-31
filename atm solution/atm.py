@@ -2,6 +2,7 @@ class ATM:
     def __init__(self, balance, bank_name):
         self.balance = balance
         self.bank_name = bank_name
+        self.withdraw_history = []
 
     def withdraw(self, request):
         print("welcome to: {}\nCurrent balance: {}".format(self.bank_name, self.balance))
@@ -9,7 +10,10 @@ class ATM:
         result = request
         if request > self.balance:
             print("Money is not enough !!\n the request is: {} \n the money is: {}".format(request, self.balance))
+        elif request <= 0:
+            print("More than zero plz!")
         else:
+            self.withdraw_history.append(request)
             while request > 0:
                 if request >= 100:
                     print("give ", 100)
@@ -37,6 +41,10 @@ class ATM:
         print("=" * 50)
         self.balance = (self.balance - result)
         return self.balance
+    def show_withdrawals(self):
+        for withdrawal in self.withdraw_history:
+            print("from {} ckeck money {}".format(self.bank_name,withdrawal))
+
 balanc1 =600
 balanc2 = 1200
 atm1 = ATM(balanc1, "bank albaraka")
@@ -45,3 +53,5 @@ atm1.withdraw(559)
 atm1.withdraw(440)
 atm2.withdraw(685)
 atm2.withdraw(254)
+atm1.show_withdrawals()
+atm2.show_withdrawals()
