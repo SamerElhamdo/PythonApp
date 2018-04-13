@@ -91,6 +91,31 @@ def store_should_add_posts(posts_instances, post_store):
     for member in posts_instances:
         post_store.add(member)
 
+def store_should_get_members_by_name(member_store):
+
+    print("*" * 30)
+    print("Getting by name:")
+    members_by_name_retrieved = member_store.get_by_name("Mohammed")
+    print_instances_list(members_by_name_retrieved)
+
+def store_should_get_members_with_posts(member_store, post_store):
+    members_with_posts = member_store.get_members_with_posts(post_store.get_all())
+
+    for member_with_posts in members_with_posts:
+        print("{} has posts:".format(member_with_posts))
+        for post in member_with_posts.posts:
+            print("\t{}".format(post))
+
+        print("=" * 10)
+
+
+def store_should_get_top_two(member_store, post_store):
+    top_two_members = member_store.get_top_two(post_store.get_all())
+
+    for member_with_posts in top_two_members:
+        print("{} has posts:".format(member_with_posts))
+        for post in member_with_posts.posts:
+            print("\t{}".format(post))
 
 
 members_instances = create_members()
@@ -121,3 +146,9 @@ post_store = stores.PostStore()
 store_should_add_posts(posts_instances, post_store)
 
 print_all_instances(post_store)
+
+store_should_get_members_by_name(member_store)
+
+store_should_get_members_with_posts(member_store, post_store)
+
+store_should_get_top_two(member_store, post_store)

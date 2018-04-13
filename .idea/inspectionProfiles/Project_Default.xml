@@ -8,6 +8,8 @@
           <option value="models.Post" />
           <option value="models.Member" />
           <option value="Forums.main.*" />
+          <option value="models" />
+          <option value="stores" />
         </list>
       </option>
     </inspection_tool>
