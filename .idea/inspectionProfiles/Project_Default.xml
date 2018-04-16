@@ -10,6 +10,8 @@
           <option value="Forums.main.*" />
           <option value="models" />
           <option value="stores" />
+          <option value="app.*" />
+          <option value="dummy_data" />
         </list>
       </option>
     </inspection_tool>

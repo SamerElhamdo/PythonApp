@@ -1,28 +1,26 @@
-body {
-    font-size: 20px
+body{
+	background-color: #ffffff;
 }
 
-.content {
-    max-width: 600px;
-    margin: 0 auto;
-    border-top: 1px solid #ccc;
-    padding: 20px;
+h1{
+	text-align: center;
+	margin-top: 20px;
 }
 
-table td {
-    min-width: 100px;
+.links{
+	text-align: center;
+
 }
 
-    table td:first-child {
-        min-width: 400px;
-    }
-
-thead {
-    text-align: left;
+.btnn{
+	width: 150px;
+	background: forestgreen;
 }
-
-.centered-item {
-    text-align: center;
-    margin: 10px auto;
+#editor{
+	background-color: #ffffff
 }
-
+.divv{
+	align-items: center;
+	border: 1px solid;
+	padding: 20px
+}
