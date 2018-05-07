@@ -7,7 +7,7 @@ dummy_members = [
 ]
 
 dummy_posts = [
-    models.Post("Agriculture", "Agriculture is amazing", dummy_members[0].id),
+    models.Post("Hello world !", "Hello world from Flask!", dummy_members[0].id),
     models.Post("Engineering", "I love engineering", dummy_members[0].id),
 
     models.Post("Medicine", "Medicine is great", dummy_members[1].id),
@@ -23,6 +23,6 @@ dummy_posts = [
 def seed_stores(member_store, post_store):
     for member in dummy_members:
         member_store.add(member)
-
+    
     for post in dummy_posts:
         post_store.add(post)
