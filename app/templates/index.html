@@ -1,117 +1,44 @@
-﻿<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Forums Workshop</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/style.css">
+    <title>Title</title>
 </head>
-
 <body>
+<h1>One Million Arab Coders Forums</h1>
 
-    <div class="centered-item">
-        <h1>OneMillion</h1>
-		<h4>Done by: samer elhamdo</h4>
-    </div>
-
-    <div class="centered-item">
-        <a href="#">Members</a>
-
-        <a href="#">Profile</a>
-    </div>
-
-    <div class="content">
-        <a href="/topic/add">Create</a>
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>
-                        Title
-                    </th>
-
-                    <th>
-                        content
-                    </th>
-
-                    <th>
-                        Edit
-                    </th>
-
-                    <th>
-                        Delete
-                    </th>
-                </tr>
-            </thead>
-
-            <tbody>
-            <!--<tr>
-                <td>
-                    topic1
-                </td>
-
-                <td>
-                    <a href="#">edit</a>
-                </td>
-
-                <td>
-                    <a href="#">delete</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    topic2
-                </td>
-
-                <td>
-                    <a href="#">edit</a>
-                </td>
-
-                <td>
-                    <a href="#">delete</a>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    topic3
-                </td>
-
-                <td>
-                    <a href="#">edit</a>
-                </td>
-
-                <td>
-                    <a href="#">delete</a>
-                </td>
-            </tr>-->
-                
-            {% for post in posts %}
-                <tr>
-                    <td>
-                        {{post.title}}
-                    </td>
-
-                    <td>
-                        {{post.content}}
-                    </td>
-
-                    <td>
-                        <a href="#">edit</a>
-                    </td>
-
-                    <td>
-                        <a href="#">delete</a>
-                    </td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
+<ul>
+    <li><a href="#">Members</a></li>
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+</ul>
+<br>
+<form method="get" action="/topic/add">
+    <button class="btn btn-lg">Create New post</button>
+</form>
+<br><br>
+<table>
+    <col width="80%">
+    <col width="10%">
+    <col width="10%">
+  <tr>
+    <th class="title">Title</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {% for post in posts %}
+    <tr>
+        <td><a href="{{ url_for("show_topic", id = post.id) }}">{{post.title}}</a></td>
+        <td><a href="{{ url_for("edit_topic", id = post.id) }}">edit</a></td>
+        <td><a href="{{ url_for("topic_delete", id = post.id) }}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<footer>
+    <h4>Done by: samer elhamdo</h4>
+</footer>
 </body>
-
 </html>
-
