@@ -45,7 +45,12 @@ $(function () {
     $('a').on('click', function (e) {
         e.preventDefault();
         var pagRe = $(this).attr('href');
-        callPage(pagRe);
+        if ($(this).hasClass('delete_button')) {
+            console.log('has class delete');
+        } else {
+            callPage(pagRe);
+        }
+        
     });
     
 
