@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/style.css">
+    <script
+       src="https://code.jquery.com/jquery-3.3.1.min.js"
+       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+       crossorigin="anonymous">
+    </script>
     <title>Title</title>
 </head>
 <body>
@@ -17,7 +22,7 @@
 </ul>
 <br>
 <form method="get" action="/topic/add">
-    <button class="btn btn-lg">Create New post</button>
+    <a class="SPA" href="/topic/add"><button class="btn btn-lg">Create New post</button></a>
 </form>
 <br><br>
 <table>
@@ -33,12 +38,13 @@
     <tr>
         <td><a href="{{ url_for("show_topic", id = post.id) }}">{{post.title}}</a></td>
         <td><a href="{{ url_for("edit_topic", id = post.id) }}">edit</a></td>
-        <td><a href="{{ url_for("topic_delete", id = post.id) }}">delete</a></td>
+        <td><a class="delete_button" href="{{ url_for("topic_delete", id = post.id) }}">delete</a></td>
     </tr>
     {% endfor %}
 </table>
 <footer>
     <h4>Done by: samer elhamdo</h4>
 </footer>
+<script src="../static/main.js"></script>
 </body>
 </html>

@@ -34,6 +34,6 @@ class Post():
 
             "id": self.id,
             "title": self.title,
-            "age": self.content,
+            "content": self.content,
             "member_id": self.member_id,
         }

@@ -10,7 +10,7 @@ def all_apis():
     return jsonify(posts)
 
 
-@app.route("/api/topic/show/<int:id>")
+@app.route("/api/topic/show/<int:id>", methods=['GET'])
 def show_api(id):
     post = post_store.get_by_id(id)
     if post is None:
