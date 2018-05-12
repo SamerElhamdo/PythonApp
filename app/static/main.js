@@ -42,7 +42,7 @@ $(function () {
             }
         });
     }
-    $('.SPA').on('click', function (e) {
+    $('a').on('click', function (e) {
         e.preventDefault();
         var pagRe = $(this).attr('href');
         callPage(pagRe);
